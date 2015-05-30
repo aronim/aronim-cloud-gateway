@@ -1,0 +1,64 @@
+spring:
+  application:
+    name: kungfudev-cloud-gateway
+
+server:
+  port: 8000
+
+security:
+  user:
+    password: password
+
+zuul:
+  routes:
+
+    # Application Component
+    application-resources:
+      path: /resources/application/**
+      serviceId: kungfudev-cloud-application
+      stripPrefix: false
+    application-api:
+      path: /api/applications/**
+      serviceId: kungfudev-cloud-application
+      stripPrefix: false
+
+    # WebJar Component
+    common-resources:
+      path: /resources/common/**
+      serviceId: kungfudev-cloud-webjar
+      stripPrefix: false
+    common-webjars:
+      path: /webjars/**
+      serviceId: kungfudev-cloud-webjar
+      stripPrefix: false
+
+    # User Component
+    user-api:
+      path: /api/users/**
+      serviceId: kungfudev-cloud-user
+      stripPrefix: false
+    user-resources:
+      path: /resources/user/**
+      serviceId: kungfudev-cloud-user
+      stripPrefix: false
+
+    # Web Component
+    web-root:
+      path: /
+      serviceId: kungfudev-cloud-web
+      stripPrefix: false
+    web-resources:
+      path: /resources/**
+      serviceId: kungfudev-cloud-web
+      stripPrefix: false
+
+eureka:
+  instance:
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+endpoints:
+  shutdown:
+    enabled: true
+  restart:
+    enabled: true
