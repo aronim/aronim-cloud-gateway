@@ -5,21 +5,17 @@ spring:
 server:
   port: 8000
 
-security:
-  user:
-    password: password
-
 zuul:
   routes:
 
-    # Application Component
-    application-resources:
-      path: /resources/application/**
-      serviceId: kungfudev-cloud-application
+    # Component Component
+    component-resources:
+      path: /resources/component/**
+      serviceId: kungfudev-cloud-component
       stripPrefix: false
-    application-api:
-      path: /api/applications/**
-      serviceId: kungfudev-cloud-application
+    component-api:
+      path: /api/components/**
+      serviceId: kungfudev-cloud-component
       stripPrefix: false
 
     # WebJar Component
@@ -51,14 +47,3 @@ zuul:
       path: /resources/**
       serviceId: kungfudev-cloud-web
       stripPrefix: false
-
-eureka:
-  instance:
-    metadataMap:
-      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-
-endpoints:
-  shutdown:
-    enabled: true
-  restart:
-    enabled: true

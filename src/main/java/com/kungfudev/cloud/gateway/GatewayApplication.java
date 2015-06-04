@@ -2,6 +2,7 @@ package com.kungfudev.cloud.gateway;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -43,6 +44,7 @@ import java.io.IOException;
 @EnableEurekaClient
 @SpringBootApplication
 @EnableRedisHttpSession
+@EnableAutoConfiguration
 public class GatewayApplication {
 
     public static void main(String[] args) {
@@ -82,6 +84,8 @@ public class GatewayApplication {
                     .anyRequest().authenticated()
                     .and()
                     .csrf().csrfTokenRepository(csrfTokenRepository())
+                    .and()
+                    .headers().cacheControl().disable()
                     .and()
                     .addFilterAfter(csrfHeaderFilter(), CsrfFilter.class);
         }
