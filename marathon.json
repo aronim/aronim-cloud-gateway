@@ -1,0 +1,27 @@
+{
+  "id": "kdc-gateway",
+  "instances": 1,
+  "cpus": 0.25,
+  "mem": 128.0,
+  "container": {
+    "docker": {
+      "type": "DOCKER",
+      "image": "hub.kungfudev.io/kungfudev-cloud-gateway:latest",
+      "network": "BRIDGE",
+      "parameters": [],
+      "portMappings": [
+        {
+          "containerPort": 8000,
+          "hostPort": 8000,
+          "protocol": "tcp"
+        }
+      ]
+    }
+  },
+  "uris": [
+    "file:///etc/.dockercfg"
+  ],
+  "env": {
+    "SETTINGS_FLAVOR": "local"
+  }
+}

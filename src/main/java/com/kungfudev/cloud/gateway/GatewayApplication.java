@@ -86,7 +86,6 @@ public class GatewayApplication {
                     .csrf().csrfTokenRepository(csrfTokenRepository())
                     .and()
                     .headers().cacheControl().disable()
-                    .and()
                     .addFilterAfter(csrfHeaderFilter(), CsrfFilter.class);
         }
 

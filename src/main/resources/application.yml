@@ -1,6 +1,6 @@
 spring:
   application:
-    name: kungfudev-cloud-gateway
+    name: kdc-gateway
 
 server:
   port: 8000
