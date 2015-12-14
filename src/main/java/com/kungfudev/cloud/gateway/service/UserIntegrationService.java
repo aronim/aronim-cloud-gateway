@@ -14,12 +14,14 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class UserIntegrationService {
 
+    public static final String BASE_URL = "http://kdc-user/internal/users";
+
     @Autowired
     private RestTemplate restTemplate;
 
     public User findByEmailAddress(String emailAddress) {
 
-        String url = "http://kungfudev-cloud-user/internal/users/findByEmailAddress?emailAddress={emailAddress}";
+        String url = BASE_URL + "/findByEmailAddress?emailAddress={emailAddress}";
         try {
 
             return restTemplate.getForObject(url, User.class, emailAddress);

@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
  * Date: 2015-05-30
  * Time: 19h26
  */
-@Component
+@Component("userDetailsService")
 public class KungfuDevUserDetailsService implements UserDetailsService {
 
     @Autowired

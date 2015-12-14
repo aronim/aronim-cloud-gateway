@@ -11,39 +11,19 @@ zuul:
     # Component Component
     component-resources:
       path: /resources/component/**
-      serviceId: kungfudev-cloud-component
+      serviceId: kdc-component
       stripPrefix: false
     component-api:
       path: /api/components/**
-      serviceId: kungfudev-cloud-component
-      stripPrefix: false
-
-    # WebJar Component
-    common-resources:
-      path: /resources/common/**
-      serviceId: kungfudev-cloud-webjar
-      stripPrefix: false
-    common-webjars:
-      path: /webjars/**
-      serviceId: kungfudev-cloud-webjar
+      serviceId: kdc-component
       stripPrefix: false
 
     # User Component
     user-api:
       path: /api/users/**
-      serviceId: kungfudev-cloud-user
+      serviceId: kdc-user
       stripPrefix: false
     user-resources:
       path: /resources/user/**
-      serviceId: kungfudev-cloud-user
-      stripPrefix: false
-
-    # Web Component
-    web-root:
-      path: /
-      serviceId: kungfudev-cloud-web
-      stripPrefix: false
-    web-resources:
-      path: /resources/**
-      serviceId: kungfudev-cloud-web
+      serviceId: kdc-user
       stripPrefix: false
