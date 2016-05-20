@@ -1,12 +1,12 @@
 {
-  "id": "kdc-gateway",
+  "id": "ac-gateway",
   "instances": 1,
   "cpus": 0.25,
   "mem": 128.0,
   "container": {
     "docker": {
       "type": "DOCKER",
-      "image": "hub.kungfudev.io/kungfudev-cloud-gateway:latest",
+      "image": "hub.aronim.com/kungfudev-cloud-gateway:latest",
       "network": "BRIDGE",
       "parameters": [],
       "portMappings": [

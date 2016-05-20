@@ -1,4 +1,4 @@
-package com.kungfudev.cloud.gateway.service;
+package com.aronim.cloud.gateway.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class UserIntegrationService {
 
-    public static final String BASE_URL = "http://kdc-user/internal/users";
+    public static final String BASE_URL = "http://ac-user/internal/users";
 
     @Autowired
     private RestTemplate restTemplate;

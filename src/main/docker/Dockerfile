@@ -1,4 +1,4 @@
-FROM hub.kungfudev.io/java:8
+FROM hub.aronim.com/java:8
 
 VOLUME /tmp
 
@@ -11,6 +11,6 @@ ENTRYPOINT exec java \
     -Deureka.instance.hostname=$HOST
     -Deureka.instance.nonSecurePort=$PORT0
     -Djava.security.egd=file:/dev/./urandom \
-    -Dspring.cloud.config.uri=http://kdc-configuration.marathon.mesos:8888 \
+    -Dspring.cloud.config.uri=http://ac-configuration.marathon.mesos:8888 \
     -Dspring.profiles.active=marathon \
     -jar /data/app.jar

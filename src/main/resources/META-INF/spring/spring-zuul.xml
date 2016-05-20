@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="com.kungfudev.cloud.gateway.zuul.HeaderUrlRewritingFilter">
+    <bean class="com.aronim.cloud.gateway.zuul.HeaderUrlRewritingFilter">
         <constructor-arg name="regex" value="http://localhost:9002/"/>
         <constructor-arg name="replacement" value="http://localhost:8000/"/>
     </bean>

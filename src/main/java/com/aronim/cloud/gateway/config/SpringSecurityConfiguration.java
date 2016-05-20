@@ -1,4 +1,4 @@
-package com.kungfudev.cloud.gateway.config;
+package com.aronim.cloud.gateway.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;

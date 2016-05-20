@@ -1,4 +1,4 @@
-package com.kungfudev.cloud.gateway.controller;
+package com.aronim.cloud.gateway.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

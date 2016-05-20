@@ -1,6 +1,6 @@
 spring:
   application:
-    name: kdc-gateway
+    name: aronim-cloud-gateway
 
 server:
   port: 8000
@@ -11,19 +11,19 @@ zuul:
     # Component Component
     component-resources:
       path: /resources/component/**
-      serviceId: kdc-component
+      serviceId: aronim-cloud-component
       stripPrefix: false
     component-api:
       path: /api/components/**
-      serviceId: kdc-component
+      serviceId: aronim-cloud-component
       stripPrefix: false
 
     # User Component
     user-api:
       path: /api/users/**
-      serviceId: kdc-user
+      serviceId: aronim-cloud-user
       stripPrefix: false
     user-resources:
       path: /resources/user/**
-      serviceId: kdc-user
+      serviceId: aronim-cloud-user
       stripPrefix: false

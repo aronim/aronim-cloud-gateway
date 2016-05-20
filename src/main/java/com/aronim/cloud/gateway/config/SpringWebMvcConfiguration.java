@@ -1,4 +1,4 @@
-package com.kungfudev.cloud.gateway.config;
+package com.aronim.cloud.gateway.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

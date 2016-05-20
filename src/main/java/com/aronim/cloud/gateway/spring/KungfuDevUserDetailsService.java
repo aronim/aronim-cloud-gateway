@@ -1,9 +1,9 @@
-package com.kungfudev.cloud.gateway.spring;
+package com.aronim.cloud.gateway.spring;
 
-import com.kungfudev.cloud.common.security.KungfuDevUserDetails;
-import com.kungfudev.cloud.gateway.service.Role;
-import com.kungfudev.cloud.gateway.service.User;
-import com.kungfudev.cloud.gateway.service.UserIntegrationService;
+import com.aronim.cloud.common.security.KungfuDevUserDetails;
+import com.aronim.cloud.gateway.service.Role;
+import com.aronim.cloud.gateway.service.User;
+import com.aronim.cloud.gateway.service.UserIntegrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

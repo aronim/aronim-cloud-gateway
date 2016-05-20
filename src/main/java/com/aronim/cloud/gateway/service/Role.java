@@ -1,4 +1,4 @@
-package com.kungfudev.cloud.gateway.service;
+package com.aronim.cloud.gateway.service;
 
 import java.io.Serializable;
 

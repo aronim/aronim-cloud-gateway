@@ -6,7 +6,7 @@
 
         function ($, angular) {
 
-            var module = angular.module("kdc.common.logout", []);
+            var module = angular.module("aronim.cloud.common.logout", []);
 
             module.controller("LogoutController", function ($scope, $http, $window) {
 

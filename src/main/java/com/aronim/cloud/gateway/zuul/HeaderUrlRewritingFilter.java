@@ -1,4 +1,4 @@
-package com.kungfudev.cloud.gateway.zuul;
+package com.aronim.cloud.gateway.zuul;
 
 import java.util.Collection;
 import com.google.common.base.Objects;
