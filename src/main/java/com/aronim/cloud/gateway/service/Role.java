@@ -7,18 +7,21 @@ import java.io.Serializable;
  * Date: 2015-05-30
  * Time: 19h39
  */
-public class Role implements Serializable {
-
+public class Role implements Serializable
+{
     private String name;
 
-    public Role() {
+    public Role()
+    {
     }
 
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name;
     }
 }

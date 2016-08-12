@@ -21,11 +21,11 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @SpringBootApplication
 @EnableRedisHttpSession
 @EnableAutoConfiguration
-public class GatewayApplication {
-
-    public static void main(String[] args) {
+public class GatewayApplication
+{
+    public static void main(String[] args)
+    {
         System.setProperty("spring.profiles.active", "cloud");
         SpringApplication.run(GatewayApplication.class);
     }
-
 }

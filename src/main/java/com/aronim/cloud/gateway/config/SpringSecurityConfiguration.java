@@ -25,17 +25,18 @@ import java.io.IOException;
 
 @Configuration
 @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
-public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
-
+public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter
+{
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth,
-                                UserDetailsService userDetailsService) throws Exception {
-
+                                UserDetailsService userDetailsService) throws Exception
+    {
         auth.userDetailsService(userDetailsService);
     }
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    protected void configure(HttpSecurity http) throws Exception
+    {
         http
                 .httpBasic()
                 .and()
@@ -49,23 +50,27 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .csrf().csrfTokenRepository(csrfTokenRepository())
                 .and()
                 .headers().cacheControl().disable()
+                .and()
                 .addFilterAfter(csrfHeaderFilter(), CsrfFilter.class);
     }
 
-    private Filter csrfHeaderFilter() {
-        return new OncePerRequestFilter() {
-
+    private Filter csrfHeaderFilter()
+    {
+        return new OncePerRequestFilter()
+        {
             @Override
             protected void doFilterInternal(HttpServletRequest request,
                                             HttpServletResponse response, FilterChain filterChain)
-                    throws ServletException, IOException {
-
+                    throws ServletException, IOException
+            {
                 CsrfToken csrf = (CsrfToken) request.getAttribute(CsrfToken.class.getName());
 
-                if (csrf != null) {
+                if (csrf != null)
+                {
                     Cookie cookie = WebUtils.getCookie(request, "XSRF-TOKEN");
                     String token = csrf.getToken();
-                    if (cookie == null || token != null && !token.equals(cookie.getValue())) {
+                    if (cookie == null || token != null && !token.equals(cookie.getValue()))
+                    {
                         cookie = new Cookie("XSRF-TOKEN", token);
                         cookie.setPath("/");
                         response.addCookie(cookie);
@@ -76,8 +81,8 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
         };
     }
 
-    private CsrfTokenRepository csrfTokenRepository() {
-
+    private CsrfTokenRepository csrfTokenRepository()
+    {
         HttpSessionCsrfTokenRepository repository = new HttpSessionCsrfTokenRepository();
         repository.setHeaderName("X-XSRF-TOKEN");
 

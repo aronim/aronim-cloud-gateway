@@ -8,8 +8,8 @@ import java.util.Set;
  * Date: 2015-05-29
  * Time: 12h36
  */
-public class User implements Serializable {
-
+public class User implements Serializable
+{
     private String id;
 
     private String firstName;
@@ -22,54 +22,67 @@ public class User implements Serializable {
 
     private Set<Role> roles;
 
-    public User() {
+    public User()
+    {
     }
 
-    public String getId() {
+    public String getId()
+    {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(String id)
+    {
         this.id = id;
     }
 
-    public String getFirstName() {
+    public String getFirstName()
+    {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(String firstName)
+    {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
+    public String getLastName()
+    {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(String lastName)
+    {
         this.lastName = lastName;
     }
 
-    public String getEmailAddress() {
+    public String getEmailAddress()
+    {
         return emailAddress;
     }
 
-    public void setEmailAddress(String emailAddress) {
+    public void setEmailAddress(String emailAddress)
+    {
         this.emailAddress = emailAddress;
     }
 
-    public String getEncryptedPassword() {
+    public String getEncryptedPassword()
+    {
         return encryptedPassword;
     }
 
-    public void setEncryptedPassword(String encryptedPassword) {
+    public void setEncryptedPassword(String encryptedPassword)
+    {
         this.encryptedPassword = encryptedPassword;
     }
 
-    public Set<Role> getRoles() {
+    public Set<Role> getRoles()
+    {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(Set<Role> roles)
+    {
         this.roles = roles;
     }
 }

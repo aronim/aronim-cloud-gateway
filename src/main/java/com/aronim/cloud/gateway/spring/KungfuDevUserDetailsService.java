@@ -23,17 +23,18 @@ import java.util.stream.Collectors;
  * Time: 19h26
  */
 @Component("userDetailsService")
-public class KungfuDevUserDetailsService implements UserDetailsService {
-
+public class KungfuDevUserDetailsService implements UserDetailsService
+{
     @Autowired
     private UserIntegrationService userIntegrationService;
 
     @Override
-    public UserDetails loadUserByUsername(String emailAddress) throws UsernameNotFoundException {
-
+    public UserDetails loadUserByUsername(String emailAddress) throws UsernameNotFoundException
+    {
         User user = userIntegrationService.findByEmailAddress(emailAddress);
 
-        if (user == null) {
+        if (user == null)
+        {
             return null;
         }
 
@@ -46,11 +47,12 @@ public class KungfuDevUserDetailsService implements UserDetailsService {
         return new KungfuDevUserDetails(userId, firstName, lastName, emailAddress, encryptedPassword, authorities);
     }
 
-    private Collection<? extends GrantedAuthority> getAuthorities(User user) {
-
+    private Collection<? extends GrantedAuthority> getAuthorities(User user)
+    {
         Set<Role> roles = user.getRoles();
 
-        if (roles != null) {
+        if (roles != null)
+        {
             return roles.stream()
                     .map(role -> new SimpleGrantedAuthority(role.getName()))
                     .collect(Collectors.toList());

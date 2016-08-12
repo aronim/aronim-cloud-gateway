@@ -12,23 +12,24 @@ import org.springframework.web.client.RestTemplate;
  * Time: 19h27
  */
 @Service
-public class UserIntegrationService {
-
-    public static final String BASE_URL = "http://ac-user/internal/users";
+public class UserIntegrationService
+{
+    public static final String BASE_URL = "http://aronim-cloud-user/internal/users";
 
     @Autowired
     private RestTemplate restTemplate;
 
-    public User findByEmailAddress(String emailAddress) {
-
+    public User findByEmailAddress(String emailAddress)
+    {
         String url = BASE_URL + "/findByEmailAddress?emailAddress={emailAddress}";
-        try {
-
+        try
+        {
             return restTemplate.getForObject(url, User.class, emailAddress);
-
-        } catch (HttpStatusCodeException e) {
-
-            if (e.getStatusCode() == HttpStatus.NOT_FOUND) {
+        }
+        catch (HttpStatusCodeException e)
+        {
+            if (e.getStatusCode() == HttpStatus.NOT_FOUND)
+            {
                 return null;
             }
 

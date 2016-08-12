@@ -1,20 +1,24 @@
-<html>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>KungfuDev Cloud</title>
+    <title>Aronim Cloud</title>
 
-    <link rel="stylesheet" href="/webjars/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.css}"
+          rel="stylesheet" media="screen"/>
 
     <script type="text/javascript"
             data-main="/resources/common/js/aronim.cloud.common.require.js"
-            src="/webjars/requirejs/2.1.17/require.min.js"></script>
+            src="../../../../../aronim-cloud-common/src/main/resources/META-INF/resources/common/js/aronim.cloud.common.require.local.js"
+            th:src="@{/webjars/requirejs/2.1.17/require.js}"></script>
 </head>
 <body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">KungfuDev Cloud</a>
+            <a class="navbar-brand" href="/">Aronim Cloud</a>
         </div>
     </div>
 </nav>

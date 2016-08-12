@@ -9,15 +9,17 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import javax.servlet.Filter;
 
 @Configuration
-public class SpringWebMvcConfiguration extends WebMvcConfigurerAdapter {
-
+public class SpringWebMvcConfiguration extends WebMvcConfigurerAdapter
+{
     @Bean
-    public Filter shallowETagHeaderFilter() {
+    public Filter shallowETagHeaderFilter()
+    {
         return new ShallowEtagHeaderFilter();
     }
 
     @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    public void addResourceHandlers(ResourceHandlerRegistry registry)
+    {
         registry.addResourceHandler("/resources/**").addResourceLocations("classpath:/META-INF/resources/");
     }
 }
