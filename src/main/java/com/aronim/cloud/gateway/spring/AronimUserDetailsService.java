@@ -1,6 +1,6 @@
 package com.aronim.cloud.gateway.spring;
 
-import com.aronim.cloud.common.security.KungfuDevUserDetails;
+import com.aronim.cloud.common.security.AronimUserDetails;
 import com.aronim.cloud.gateway.service.Role;
 import com.aronim.cloud.gateway.service.User;
 import com.aronim.cloud.gateway.service.UserIntegrationService;
@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
  * Time: 19h26
  */
 @Component("userDetailsService")
-public class KungfuDevUserDetailsService implements UserDetailsService
+public class AronimUserDetailsService implements UserDetailsService
 {
     @Autowired
     private UserIntegrationService userIntegrationService;
@@ -44,7 +44,7 @@ public class KungfuDevUserDetailsService implements UserDetailsService
         String encryptedPassword = user.getEncryptedPassword();
         Collection<? extends GrantedAuthority> authorities = getAuthorities(user);
 
-        return new KungfuDevUserDetails(userId, firstName, lastName, emailAddress, encryptedPassword, authorities);
+        return new AronimUserDetails(userId, firstName, lastName, emailAddress, encryptedPassword, authorities);
     }
 
     private Collection<? extends GrantedAuthority> getAuthorities(User user)

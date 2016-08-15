@@ -10,7 +10,7 @@ server:
 zuul:
   routes:
 
-    # Component Component
+    # Component Application
     component-resources:
       path: /resources/component/**
       serviceId: aronim-cloud-component
@@ -20,7 +20,7 @@ zuul:
       serviceId: aronim-cloud-component
       stripPrefix: false
 
-    # User Component
+    # User Application
     user-api:
       path: /api/users/**
       serviceId: aronim-cloud-user
@@ -28,4 +28,14 @@ zuul:
     user-resources:
       path: /resources/user/**
       serviceId: aronim-cloud-user
+      stripPrefix: false
+
+    # Organisation Application
+    organisation-api:
+      path: /api/organisations/**
+      serviceId: aronim-cloud-organisation
+      stripPrefix: false
+    organisation-resources:
+      path: /resources/organisation/**
+      serviceId: aronim-cloud-organisation
       stripPrefix: false
