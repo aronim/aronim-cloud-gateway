@@ -1,4 +1,4 @@
-package com.aronim.cloud.gateway.service;
+package com.aronim.cloud.gateway.integration;
 
 import java.io.Serializable;
 import java.util.Set;

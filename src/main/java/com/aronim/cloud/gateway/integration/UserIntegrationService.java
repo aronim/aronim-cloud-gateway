@@ -1,6 +1,7 @@
-package com.aronim.cloud.gateway.service;
+package com.aronim.cloud.gateway.integration;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpStatusCodeException;
@@ -14,10 +15,15 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class UserIntegrationService
 {
-    public static final String BASE_URL = "http://aronim-cloud-user/internal/users";
+    private static final String BASE_URL = "http://aronim-cloud-user/internal/users";
+
+    private final RestTemplate restTemplate;
 
     @Autowired
-    private RestTemplate restTemplate;
+    public UserIntegrationService(RestTemplate restTemplate)
+    {
+        this.restTemplate = restTemplate;
+    }
 
     public User findByEmailAddress(String emailAddress)
     {

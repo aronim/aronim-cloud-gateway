@@ -39,3 +39,23 @@ zuul:
       path: /resources/organisation/**
       serviceId: aronim-cloud-organisation
       stripPrefix: false
+
+    # Menu Application
+    menu-api:
+      path: /api/menus/**
+      serviceId: aronim-cloud-menu
+      stripPrefix: false
+    menu-resources:
+      path: /resources/menu/**
+      serviceId: aronim-cloud-menu
+      stripPrefix: false
+
+    # Incubator Application
+#    organisation-api:
+#      path: /api/organisations/**
+#      serviceId: aronim-cloud-organisation
+#      stripPrefix: false
+#    organisation-resources:
+#      path: /resources/organisation/**
+#      serviceId: aronim-cloud-organisation
+#      stripPrefix: false

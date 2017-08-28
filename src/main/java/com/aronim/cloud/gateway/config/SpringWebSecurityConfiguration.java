@@ -25,7 +25,7 @@ import java.io.IOException;
 
 @Configuration
 @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
-public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter
+public class SpringWebSecurityConfiguration extends WebSecurityConfigurerAdapter
 {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth,

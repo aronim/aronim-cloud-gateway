@@ -1,5 +1,7 @@
 package com.aronim.cloud.gateway.controller;
 
+import com.aronim.cloud.gateway.integration.menu.MenuIntegrationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +22,14 @@ import java.util.Map;
 @Controller
 public class IndexController
 {
+    private final MenuIntegrationService menuIntegrationService;
+
+    @Autowired
+    public IndexController(MenuIntegrationService menuIntegrationService)
+    {
+        this.menuIntegrationService = menuIntegrationService;
+    }
+
     @RequestMapping("/")
     public String index(Authentication authentication)
     {
@@ -38,9 +48,7 @@ public class IndexController
     {
         String path = (String) request.getAttribute(HandlerMapping.PATH_WITHIN_HANDLER_MAPPING_ATTRIBUTE);
 
-        List<Map<String, ?>> menuItems = new ArrayList<>();
-        menuItems.add(getMenuItem("Components", "/admin/components", "component/js/aronim.cloud.components", "<ac-components></ac-components>"));
-        menuItems.add(getMenuItem("Users", "/admin/user", "user/js/aronim.cloud.users", "<ac-users></ac-users>"));
+        List<Map<String, ?>> menuItems = menuIntegrationService.findMenuItems("main");
 
         model.addAttribute("menuItems", menuItems);
         model.addAttribute("selectedItem", getSelectedItem(path, menuItems));
@@ -59,16 +67,5 @@ public class IndexController
         }
 
         return menuItems.get(0);
-    }
-
-    private Map<String, Object> getMenuItem(String name, String path, String module, String element)
-    {
-        Map<String, Object> selectedItem = new HashMap<>();
-        selectedItem.put("name", name);
-        selectedItem.put("path", path);
-        selectedItem.put("module", module);
-        selectedItem.put("elementText", element);
-
-        return selectedItem;
     }
 }

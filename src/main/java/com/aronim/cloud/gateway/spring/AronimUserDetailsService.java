@@ -1,9 +1,9 @@
-package com.aronim.cloud.gateway.spring;
+package com.aronim.cloud.gateway.security;
 
 import com.aronim.cloud.common.security.AronimUserDetails;
-import com.aronim.cloud.gateway.service.Role;
-import com.aronim.cloud.gateway.service.User;
-import com.aronim.cloud.gateway.service.UserIntegrationService;
+import com.aronim.cloud.gateway.integration.Role;
+import com.aronim.cloud.gateway.integration.User;
+import com.aronim.cloud.gateway.integration.UserIntegrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

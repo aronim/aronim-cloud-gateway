@@ -25,7 +25,6 @@ public class GatewayApplication
 {
     public static void main(String[] args)
     {
-        System.setProperty("spring.profiles.active", "cloud");
         SpringApplication.run(GatewayApplication.class);
     }
 }
